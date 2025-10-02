@@ -85,3 +85,6 @@ Gem（MVPリリース向けのみ）
 
 フロントエンド（MVPリリース向けのみ）
 - Bootstrap 5：スマホ対応のため
+
+## 画面遷移図（MVPリリース用）
+https://www.figma.com/board/5wwNfpqsjBXZYG1B0Y1Hpr/Untitled?node-id=0-1&t=9kSnrP8kJwIECY6f-1
