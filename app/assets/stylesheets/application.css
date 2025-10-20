@@ -13,3 +13,76 @@
  *= require_tree .
  *= require_self
  */
+body {
+    font-family: "ヒラギノ角ゴPro";
+    background-color:#ffffff;
+    font-size: 16px;
+    color: #1760a0;
+}
+
+.site-header {
+    background-color: #1760a0;
+    color: #ffffff;
+    padding: 15px 15px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: right;
+    gap: 40px;
+}
+
+.nav-button {
+    background-color: #ffffff;
+    color: #1760a0;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.nav-button:hover {
+    background-color: #1760a0;
+    color: #ffffff;
+}
+
+.login-main {
+    width: 300px;
+    margin: auto auto;
+    padding: 50px;
+    align-items: stretch;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.login-button {
+    background-color: #1760a0;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.login-button:hover {
+    background-color: #ffffff;
+    color: #1760a0;
+}
+
+.register-button {
+    background-color: #1760a0;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.register-button:hover {
+    background-color: #ffffff;
+    color: #1760a0;
+}
