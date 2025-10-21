@@ -63,7 +63,10 @@ body {
     background-color: #1760a0;
     color: #ffffff;
     padding: 10px 20px;
-    border-radius: 6px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
     text-decoration: none;
     transition: background-color 0.2s, transform 0.1s;
 }
@@ -77,7 +80,10 @@ body {
     background-color: #1760a0;
     color: #ffffff;
     padding: 10px 20px;
-    border-radius: 6px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
     text-decoration: none;
     transition: background-color 0.2s, transform 0.1s;
 }
@@ -85,4 +91,10 @@ body {
 .register-button:hover {
     background-color: #ffffff;
     color: #1760a0;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

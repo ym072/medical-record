@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get "signup", to: "users#new"
-  root 'pages#home'
+  devise_for :users
+  # get "signup", to: "users#new"
+  root to: "devise/sessions#new"
   get "pages/home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
