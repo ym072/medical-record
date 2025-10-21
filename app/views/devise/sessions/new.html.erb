@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>medical record - ログイン</title>
+</head>
+<body>
+  <header class="site-header">
+    <h1>medical record</h1>
+    <nav class="nav-menu">
+      <!-- リンク未反映：各リンク先作成後に修正 -->
+      <%= link_to "記録", "#", class: "nav-button" %>
+      <%= link_to "サマリー", "#", class: "nav-button" %>
+      <%= link_to "一覧", "#", class: "nav-button" %>
+    </nav>
+  </header>
+
+  <main class="login-main">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }) do |f| %>
+      
+      <!-- メールアドレス -->
+      <div class="form-group">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+
+      <!-- パスワード -->
+      <div class="form-group">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "ログイン", class: "login-button" %>
+        <%= link_to "新規登録", new_registration_path(resource_name), class: "register-button" %>
+      </div>
+    <% end %>
+  </main>
+</body>
+</html>
