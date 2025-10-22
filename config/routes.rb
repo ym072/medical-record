@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # get "signup", to: "users#new"
   # ↓今後rootをpages/homeに変更予定
-  root to: "users/sessions#new"
+  root to: "devise/sessions#new"
   get "pages/home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
