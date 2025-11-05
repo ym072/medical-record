@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :kids, only: [:index, :new, :create]
+  resources :kids, only: [:index, :new, :create] do
+    member do
+      get :select
+    end
+  end
   
   # get "signup", to: "users#new"
   # ↓今後rootをpages/homeに変更予定

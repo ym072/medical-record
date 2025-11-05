@@ -18,6 +18,11 @@ class KidsController < ApplicationController
     @kids = current_user.kids
   end
 
+  def select
+    @kids = current_user.kids.find(params[:id])
+    redirect_to kid_records_path(@kid)
+  end
+
   private
 
   def kid_params
