@@ -11,12 +11,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    new_user_session_path
+    kids_path
   end
 
   def after_sign_up_path_for(resource)
-    # ページ作成後、子供選択画面に遷移するように修正
-    new_user_session_path
+    kids_path
   end
 
   def after_sign_out_path_for(resource_or_scope)

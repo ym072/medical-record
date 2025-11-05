@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resources :kids, only: [:index, :new, :create]
+  
   # get "signup", to: "users#new"
   # ↓今後rootをpages/homeに変更予定
   root to: redirect('/users/sign_in')
