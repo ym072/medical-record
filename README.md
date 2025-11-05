@@ -91,3 +91,9 @@ https://www.figma.com/board/5wwNfpqsjBXZYG1B0Y1Hpr/Untitled?node-id=0-1&t=9kSnrP
 
 ## ER図（MVPリリース用）
 https://drive.google.com/file/d/12I7SnpjabVIjpppv_fF3yFsZoS5fOh0p/view?usp=sharing
+
+## アプリURL
+https://medical-record-xqit.onrender.com/
+
+## Render
+https://dashboard.render.com/web/srv-d3njooadbo4c73d1thrg
