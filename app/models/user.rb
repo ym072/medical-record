@@ -9,4 +9,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, if: :password_required?
 
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
+
+  has_many :kids, dependent: :destroy
 end
