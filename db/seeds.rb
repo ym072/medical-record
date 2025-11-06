@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+symptom_names = [
+  "頭痛",
+  "咳",
+  "鼻水",
+  "発疹",
+  "嘔吐",
+  "便"
+]
+
+symptom_names.each do |name|
+  SymptomName.find_or_create_by!(name: name)
+end
+
+puts "症状名データを登録しました（#{SymptomName.count}件）"
+

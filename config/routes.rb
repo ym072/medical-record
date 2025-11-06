@@ -5,7 +5,14 @@ Rails.application.routes.draw do
     member do
       get :select
     end
-    resources :disease_records, only: [:new, :create]
+
+    resources :disease_records, only: [:new, :create] do
+      member do
+        get :end_form
+        patch :end_update
+      end
+    end
+
     resources :reported_symptoms, only: [:new, :create]
   end
   
