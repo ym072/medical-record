@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     member do
       get :select
     end
+    resources :disease_records, only: [:new, :create]
+    resources :reported_symptoms, only: [:new, :create]
   end
   
   # get "signup", to: "users#new"

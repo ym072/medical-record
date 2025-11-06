@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  disease_record: one
+  symptom_name: one
+  recorded_at: 2025-11-06 15:10:22
+  memo: MyText
+  body_temperature: 1.5
+
+two:
+  disease_record: two
+  symptom_name: two
+  recorded_at: 2025-11-06 15:10:22
+  memo: MyText
+  body_temperature: 1.5

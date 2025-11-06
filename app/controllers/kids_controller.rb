@@ -19,8 +19,8 @@ class KidsController < ApplicationController
   end
 
   def select
-    @kids = current_user.kids.find(params[:id])
-    redirect_to kid_records_path(@kid)
+    @kid = current_user.kids.find(params[:id])
+    redirect_to new_kid_reported_symptom_path(@kid)
   end
 
   private

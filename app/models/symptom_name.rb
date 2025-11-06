@@ -1,0 +1,2 @@
+class SymptomName < ApplicationRecord
+end

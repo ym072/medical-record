@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kid: one
+  start_at: 2025-11-06 14:24:49
+  end_at: 2025-11-06 14:24:49
+  name: MyString
+
+two:
+  kid: two
+  start_at: 2025-11-06 14:24:49
+  end_at: 2025-11-06 14:24:49
+  name: MyString
