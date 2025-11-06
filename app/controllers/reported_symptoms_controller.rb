@@ -1,0 +1,2 @@
+class ReportedSymptomsController < ApplicationController
+end
