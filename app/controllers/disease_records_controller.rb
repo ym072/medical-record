@@ -21,7 +21,7 @@ class DiseaseRecordsController < ApplicationController
   def end_update
     if @disease_record.update(end_at: Time.current)
       respond_to do |format|
-        format.html { redirect_to kid_path(@kid), notice: "看病お疲れ様でした！" }
+        format.html { redirect_to kid_path(@kid)}
         format.js
       end
     else
