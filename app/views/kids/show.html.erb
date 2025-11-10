@@ -1,0 +1,24 @@
+<!-- 仮コード -->
+
+<h1><%= @kid.name %> の記録</h1>
+
+<% if @disease_records.any? %>
+  <h2>これまでの体調記録</h2>
+  <ul>
+    <% @disease_records.each do |record| %>
+      <li>
+        記録開始日：<%= record.start_at.strftime("%Y/%m/%d %H:%M") %>
+        <% if record.end_at.present? %>
+          ／ 終了日：<%= record.end_at.strftime("%Y/%m/%d %H:%M") %>
+        <% else %>
+          ／ <span style="color:red;">現在進行中</span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>まだ記録がありません。</p>
+<% end %>
+
+<%= link_to "症状を記録する", new_kid_reported_symptom_path(@kid), class: "button" %>
+<%= link_to "戻る", kids_path, class: "button" %>

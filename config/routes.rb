@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :kids, only: [:index, :new, :create] do
+  resources :kids, only: [:index, :new, :create, :show] do
     member do
       get :select
     end
@@ -13,7 +13,11 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :reported_symptoms, only: [:new, :create]
+    resources :reported_symptoms, only: [:new, :create] do
+      collection do
+        post :start_record
+      end
+    end
   end
   
   # get "signup", to: "users#new"
