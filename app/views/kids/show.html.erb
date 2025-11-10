@@ -1,24 +1,35 @@
-<!-- 仮コード -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>medical record - 症状記録</title>
+</head>
+<body>
+  <header class="site-header">
+    <h1>medical record</h1>
+    <nav class="nav-menu">
+      <!-- リンク未反映：各リンク先作成後に修正 -->
+      <%= link_to "記録", "#", class: "nav-button" %>
+      <%= link_to "サマリー", "#", class: "nav-button" %>
+      <%= link_to "一覧", "#", class: "nav-button" %>
 
-<h1><%= @kid.name %> の記録</h1>
+      <% if user_signed_in? %>
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-button" %>
+      <% end %>
+    </nav>
+  </header>
 
-<% if @disease_records.any? %>
-  <h2>これまでの体調記録</h2>
-  <ul>
-    <% @disease_records.each do |record| %>
-      <li>
-        記録開始日：<%= record.start_at.strftime("%Y/%m/%d %H:%M") %>
-        <% if record.end_at.present? %>
-          ／ 終了日：<%= record.end_at.strftime("%Y/%m/%d %H:%M") %>
-        <% else %>
-          ／ <span style="color:red;">現在進行中</span>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>まだ記録がありません。</p>
-<% end %>
+  <main class="login-main">
 
-<%= link_to "症状を記録する", new_kid_reported_symptom_path(@kid), class: "button" %>
-<%= link_to "戻る", kids_path, class: "button" %>
+    <p>看病お疲れ様でした！！！</p>
+
+    <!-- フッター -->
+    <div class="footer">
+      <p>
+        <%= @kid.name %>
+      </p>
+    </div>
+  </main>
+</body>
+</html>
