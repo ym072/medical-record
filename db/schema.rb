@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_11_06_061556) do
+ActiveRecord::Schema[7.2].define(version: 2025_11_10_131909) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,18 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_06_061556) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_kids_on_user_id"
+  end
+
+  create_table "reported_symptoms", force: :cascade do |t|
+    t.bigint "disease_record_id", null: false
+    t.bigint "symptom_name_id"
+    t.datetime "recorded_at"
+    t.text "memo"
+    t.float "body_temperature"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["disease_record_id"], name: "index_reported_symptoms_on_disease_record_id"
+    t.index ["symptom_name_id"], name: "index_reported_symptoms_on_symptom_name_id"
   end
 
   create_table "symptom_names", force: :cascade do |t|
@@ -54,4 +66,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_06_061556) do
 
   add_foreign_key "disease_records", "kids"
   add_foreign_key "kids", "users"
+  add_foreign_key "reported_symptoms", "disease_records"
+  add_foreign_key "reported_symptoms", "symptom_names"
 end

@@ -19,11 +19,16 @@ class DiseaseRecordsController < ApplicationController
   end
 
   def end_update
-    if @disease_record.update(end_at: disease_record_params[:end_at])
-      redirect_to kid_path(@kid), notice: "体調不良の終了日時を登録しました。"
+    if @disease_record.update(end_at: Time.current)
+      respond_to do |format|
+        format.html { redirect_to kid_path(@kid), notice: "看病お疲れ様でした！" }
+        format.js
+      end
     else
-      flash.now[:alert] = "終了日時の登録に失敗しました。"
-      render :end_form, status: :unprocessable_entity
+      respond_to do |format|
+        format.html { render :end_form, status: :unprocessable_entity }
+        format.js
+      end
     end
   end
 
