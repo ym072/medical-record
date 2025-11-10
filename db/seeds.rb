@@ -14,6 +14,7 @@ symptom_names = [
   "発疹",
   "嘔吐",
   "便"
+  "その他"
 ]
 
 symptom_names.each do |name|
@@ -22,3 +23,5 @@ end
 
 puts "症状名データを登録しました（#{SymptomName.count}件）"
 
+puts "登録済みの症状名一覧："
+SymptomName.pluck(:name).each { |n| puts " - #{n}" }
