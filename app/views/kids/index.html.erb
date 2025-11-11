@@ -6,20 +6,6 @@
   <title>medical record - お子さま一覧</title>
 </head>
 <body>
-  <header class="site-header">
-    <h1>medical record</h1>
-    <nav class="nav-menu">
-      <!-- リンク未反映：各リンク先作成後に修正 -->
-      <%= link_to "記録", "#", class: "nav-button" %>
-      <%= link_to "サマリー", "#", class: "nav-button" %>
-      <%= link_to "一覧", "#", class: "nav-button" %>
-
-      <% if user_signed_in? %>
-        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-button" %>
-      <% end %>
-    </nav>
-  </header>
-
   <main class="login-main">
     <ul>
       <% @kids.each do |kid| %>
