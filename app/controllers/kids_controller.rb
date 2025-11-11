@@ -20,6 +20,7 @@ class KidsController < ApplicationController
 
   def select
     @kid = current_user.kids.find(params[:id])
+    session[:current_kid_id] = @kid.id
     latest_record = @kid.disease_records.order(:start_at).last
   
     if latest_record.nil? || latest_record.end_at.present?
