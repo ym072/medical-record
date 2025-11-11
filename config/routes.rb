@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :reported_symptoms, only: [:new, :create] do
       collection do
         post :start_record
+        get :summary
       end
     end
   end
