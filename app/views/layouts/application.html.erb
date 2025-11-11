@@ -18,6 +18,17 @@
   </head>
 
   <body>
+  <header class="site-header">
+    <h2>medical record</h2>
+    <nav class="nav-menu">
+      <% if user_signed_in? %>
+        <%= link_to "記録", new_kid_reported_symptom_path(current_user.kids.first), class: "nav-button" %>
+        <%= link_to "サマリー", summary_kid_reported_symptoms_path(current_user.kids.first), class: "nav-button" %>
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-button" %>
+      <% end %>
+    </nav>
+  </header>
+
     <%= yield %>
   </body>
 </html>
