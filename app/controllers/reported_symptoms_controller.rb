@@ -65,6 +65,23 @@ class ReportedSymptomsController < ApplicationController
     end
   end
   
+  def summary
+    @kid = Kid.find(params[:kid_id])
+
+    @disease_record = @kid.disease_records.order(start_at: :desc).first
+
+    if @disease_record.nil?
+      redirect_to kid_path(@kid), alert: "記録中の病気がありません。"
+      return
+    end
+
+    @reported_symptoms = @disease_record.reported_symptoms.includes(:symptom_name)
+
+    @symptoms_by_date = @reported_symptoms.group_by { |rs| rs.created_at.to_date }
+
+    @symptoms_by_date = @symptoms_by_date.sort.to_h
+  end
+
   private
 
   def set_kid
